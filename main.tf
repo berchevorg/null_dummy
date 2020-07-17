@@ -1,24 +1,24 @@
-# terraform {
-#   required_version = ">= 0.12"
+terraform {
+  required_version = ">= 0.12"
 
-#   required_providers {
-#     null = "2.1.2"
-#   }
-# }
-
-
-
-# resource null_resource echo_dummy {
-#   provisioner local-exec {
-#     command = "echo HelloWorld"
-#   }
-
-#   triggers = {
-#     hack = "${timestamp()}"
-#   }
-# }
-
-resource "random_pet" "name" {
- length    = "39"
- separator = "-"
+  required_providers {
+    null = "2.1.2"
+  }
 }
+
+
+
+resource null_resource echo_dummy {
+  provisioner local-exec {
+    command = "echo HelloWorld"
+  }
+
+  triggers = {
+    hack = "${timestamp()}"
+  }
+}
+
+# resource "random_pet" "name" {
+#  length    = "39"
+#  separator = "-"
+# }
