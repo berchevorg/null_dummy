@@ -8,17 +8,17 @@
 
 
 
-resource null_resource echo_dummy {
-  provisioner local-exec {
-    command = "echo HelloWorld"
-  }
+# resource null_resource echo_dummy {
+#   provisioner local-exec {
+#     command = "echo HelloWorld"
+#   }
 
-  triggers = {
-    hack = "${timestamp()}"
-  }
-}
-
-# resource "random_pet" "name" {
-#  length    = "39"
-#  separator = "-"
+#   triggers = {
+#     hack = "${timestamp()}"
+#   }
 # }
+
+resource "random_pet" "name" {
+ length    = "39"
+ separator = "-"
+}
