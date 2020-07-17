@@ -1,14 +1,21 @@
-resource "random_pet" "name" {
- length    = "8"
- separator = "-"
+terraform {
+  required_version = ">= 0.12"
+
+  required_providers {
+    null = "2.1.2"
+  }
 }
 
-resource "random_pet" "name1" {
- length    = "8"
- separator = "-"
+variable dummy {
+  default = "iam_dummy"
 }
 
-resource "random_pet" "name2" {
- length    = "8"
- separator = "-"
+resource null_resource echo_dummy {
+  provisioner local-exec {
+    command = "echo Variableddddddd is ${var.dummy}"
+  }
+
+  triggers = {
+    hack = "${timestamp()}"
+  }
 }
