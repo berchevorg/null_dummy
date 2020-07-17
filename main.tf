@@ -6,13 +6,11 @@ terraform {
   }
 }
 
-variable dummy {
-  default = "iam_dummy"
-}
+
 
 resource null_resource echo_dummy {
   provisioner local-exec {
-    command = "echo Variableddddddd is ${var.dummy}"
+    command = "echo HelloWorld"
   }
 
   triggers = {
